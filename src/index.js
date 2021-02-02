@@ -7,7 +7,12 @@ const url = "https://platzi-avo.vercel.app/api/avo"
 const baseUrl = "https://platzi-avo.vercel.app"
 
 const appNode = document.querySelector('#app')
-
+appNode.addEventListener("click", (event) =>{
+  if (event.target.nodeName === "H2") {
+    window.alert('hola')
+  }
+ 
+})
 const formatPrice = (price) => {
   //instancio la variable
   const newPrice = new window.Intl.NumberFormat('en-EN', {
@@ -38,6 +43,7 @@ async function fetchData() {
       title.textContent = item.name
       //agregando estilos desde js
       //title.style = 'font-size:'
+      
 
       title.className = "text-lg"
 
